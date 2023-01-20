@@ -23,9 +23,9 @@ This CORS policy sets the `Access-Control-Allow-Origin` header to `"*"`. This is
 the most ambiguous CORS policy and allows any origin to make requests to the
 server from a typical browser.
 
-Navigate to the frontend of the real application, [http://localhost:5001].
-You should see the front page of the real application (a clone of Twitter)
-populated with the tweets received from the API of the real application.
+Navigate to the frontend of the real application, [http://localhost:5001]. You
+should see the front page of the real application (a clone of Twitter) populated
+with the tweets received from the API of the real application.
 
 Now, navigate to the frontend of the malicious application
 [http://localhost:5002]. You should see the front page of the malicious
@@ -40,9 +40,9 @@ allow you to have this ambiguous CORS policy if the `Content-Type` header of the
 request is `"application/json"` and the method of the request is not a `GET`.
 
 Try logging in to the real application by navigating to
-[http://localhost:5001/login]. Try submitting the form with
-the credentials of `DemoUser` for the `Username` field and `password` for the
-`password` field. You should be successful in logging in.
+[http://localhost:5001/login]. Try submitting the form with the credentials of
+`DemoUser` for the `Username` field and `password` for the `password` field. You
+should be successful in logging in.
 
 Log out from the real application.
 
@@ -73,9 +73,9 @@ Otherwise, it will not set the header at all.
 The browser will prevent all other origins ones starting in `"http://localhost"`
 from making a request to the server.
 
-Navigate to the frontend of the real application, [http://localhost:5001].
-You should see the front page of the real application (a clone of Twitter)
-populated with the tweets received from the API of the real application.
+Navigate to the frontend of the real application, [http://localhost:5001]. You
+should see the front page of the real application (a clone of Twitter) populated
+with the tweets received from the API of the real application.
 
 Now, navigate to the frontend of the malicious application
 [http://localhost:5002]. You should see the front page of the malicious
@@ -83,9 +83,9 @@ application which should also be populated with the tweets received from the API
 of the real application.
 
 Try logging in to the real application by navigating to
-[http://localhost:5001/login]. Try submitting the form with
-the credentials of `DemoUser` for the `Username` field and `password` for the
-`password` field. You should be successful in logging in.
+[http://localhost:5001/login]. Try submitting the form with the credentials of
+`DemoUser` for the `Username` field and `password` for the `password` field. You
+should be successful in logging in.
 
 Log out from the real application.
 
@@ -106,28 +106,27 @@ __real-app/backend/app.js__ file.
 Comment in the next CORS policy defined from lines 38-41 of the
 __real-app/backend/app.js__ file.
 
-This CORS policy is a specific policy on the server. The CORS
-policy will set the `Access-Control-Allow-Origin` header to
-`"http://localhost:5001"` which is the URL of the real application. The browser
-will prevent all other origins besides `"http://localhost:5001"` from making
-a request to the server.
+This CORS policy is a specific policy on the server. The CORS policy will set
+the `Access-Control-Allow-Origin` header to `"http://localhost:5001"` which is
+the URL of the real application. The browser will prevent all other origins
+besides `"http://localhost:5001"` from making a request to the server.
 
-Navigate to the frontend of the real application, [http://localhost:5001].
-You should see the front page of the real application (a clone of Twitter)
-populated with the tweets received from the API of the real application.
+Navigate to the frontend of the real application, [http://localhost:5001]. You
+should see the front page of the real application (a clone of Twitter) populated
+with the tweets received from the API of the real application.
 
 Now, navigate to the frontend of the malicious application
-[http://localhost:5002], or refresh the page if you are already at that URL. You should **NOT** see the front page of the malicious
-application this time.
+[http://localhost:5002], or refresh the page if you are already at that URL. You
+should **NOT** see the front page of the malicious application this time.
 
 Open up the Developer Tool's Console to see more specifics on the error. The
 Chrome browser did not allow you to make the request because the CORS policy was
 ambiguous.
 
 Try logging in to the real application by navigating to
-[http://localhost:5001/login]. Try submitting the form with
-the credentials of `DemoUser` for the `Username` field and `password` for the
-`password` field. You should be successful in logging in.
+[http://localhost:5001/login]. Try submitting the form with the credentials of
+`DemoUser` for the `Username` field and `password` for the `password` field. You
+should be successful in logging in.
 
 Log out from the real application.
 
@@ -141,8 +140,8 @@ Chrome browser did not allow you to make the request because the CORS policy was
 ambiguous.
 
 Since the CORS policy only matches the real application URL and **NOT** the
-malicious application URL, the browser will allow **NOT** allow the
-malicious application to make requests to the real application's server.
+malicious application URL, the browser will allow **NOT** allow the malicious
+application to make requests to the real application's server.
 
 **IMPORTANT NOTE**: This only prevents **BROWSERS** from not making requests to
 the server. If a request is made through Postman or any other client, CORS may
