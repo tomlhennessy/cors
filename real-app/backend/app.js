@@ -35,10 +35,10 @@ app.use(cookieParser());
 // }));
 
 // 3. More Specific CORS policy - does not allow malicious app (good)
-// app.use(cors({
-//   origin: 'http://localhost:5001',
-//   credentials: true // allow sending and receiving cookies
-// }));
+app.use(cors({
+  origin: 'http://localhost:5001',
+  credentials: true // allow sending and receiving cookies
+}));
 
 // 4. Multiple origins CORS policy - allow malicious app (good if you want
   // to allow malicious app)
